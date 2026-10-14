@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Tailwind CSS CDN -->
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+
+    <!-- Main content goes here  -->
+    <main>
+        <div class="card">
+        <header>
+            <h1>TO DO LIST</h1>
+        </header>
+
+        <!-- Form section -->
+        <section class="form-section">
+            <form>
+                <!-- Todo Input -->
+                 <input type="text" class="border rounded p-2 " id="todo-input" placeholder="Enter a new todo item">
+
+                 <!-- Date Input -->
+                  <input type="date"  class="border rounded p-2 " id="todo-date" placeholder="Enter due date">
+                
+            </form>
+
+            <!-- Add Button -->
+             <button type="button" onclick="addTodo();"  class="border rounded p-2 bg-green-500 text-white">Add Todo</button>
+        </section>
+
+        <!-- Action Section -->
+         <section class="flex pt-2 justify-between">
+            
+            <!-- Filter Options -->
+            <button id="filter-toggle" type="button" onclick="toggleFilter();" aria-expanded="false" aria-controls="status-filter" class="border rounded p-2 bg-blue-500 text-white">Filter Todos</button>
+            <select id="status-filter" aria-label="Filter todos by status" onchange="filterTodos();" hidden>
+                <option value="all">All statuses</option>
+                <option value="todo">Todo</option>
+                <option value="doing">Doing</option>
+                <option value="done">Done</option>
+            </select>
+
+            <!-- Clear All Button -->
+             <button type="button" onclick="clearTodo();" class="border rounded p-2 bg-red-500 text-white">Clear All Todos</button>
+         </section>
+            
+         <!-- Todo List Section -->
+         <section class="pt-2">
+            <header>
+                <h1 class="text-2xl font-semibold" id="fan">List Of Todos</h1>
+            </header>
+
+            <ul class="pt-2" id="todo-list">
+                <!-- Todo items will be dynamically added here -->
+                <li class="sigma">No todos available</li>
+            </ul>
+         </section>
+         </div>
+    </main>
+
+    <!-- Footer section -->
+    <footer class="pt-5">
+        <p>&copy; 2025 Todo List Irfhan </p>
+    </footer>
+    
+
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
